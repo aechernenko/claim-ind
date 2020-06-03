@@ -104,9 +104,8 @@ def predict():
 
 
 def send_json(data):
-    url = 'http://127.0.0.1:5000/predict'
     headers = {'content-type': 'application/json'}
-    response = requests.post(url, json=data, headers=headers)
+    response = requests.post(url_for('predict', _external=True), json=data, headers=headers)
     return response
 
 
